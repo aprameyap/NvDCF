@@ -1,0 +1,81 @@
+%YAML:1.0
+
+BaseConfig:
+  minDetectorConfidence: 0.0382
+TargetManagement:
+  enableBboxUnClipping: 0
+  preserveStreamUpdateOrder: 0
+  maxTargetsPerStream: 150
+  minIouDiff4NewTarget: 0.1356
+  minTrackerConfidence: 0.2136
+  probationAge: 1
+  maxShadowTrackingAge: 49
+  earlyTerminationAge: 1
+TrajectoryManagement:
+  useUniqueID: 0
+  enableReAssoc: 1
+  minMatchingScore4Overall: 0.0324
+  minTrackletMatchingScore: 0.2979
+  minMatchingScore4ReidSimilarity: 0.4329
+  matchingScoreWeight4TrackletSimilarity: 0.5117
+  matchingScoreWeight4ReidSimilarity: 0.8356
+  minTrajectoryLength4Projection: 14
+  prepLength4TrajectoryProjection: 50
+  trajectoryProjectionLength: 116
+  maxAngle4TrackletMatching: 180
+  minSpeedSimilarity4TrackletMatching: 0
+  minBboxSizeSimilarity4TrackletMatching: 0.2154
+  maxTrackletMatchingTimeSearchRange: 16
+  trajectoryProjectionProcessNoiseScale: 0.0100
+  trajectoryProjectionMeasurementNoiseScale: 100
+  trackletSpacialSearchRegionScale: 0.0742
+  reidExtractionInterval: 2
+  enableVanishingTrackletReconstruction: 0
+  minInclusionRatio4DuplicateTrackletRemoval: 0.5705
+  minIou4DuplicateTrackletRemoval: 0.5260
+  minMatchRatio4ValidTrackletDetermination: 0.4385
+  minVisibility4VanishingTrackletReconstruction: 0.3485
+  visibilityThreshold4VanishingTrackletDetection: 0.5817
+ DataAssociator:
+  dataAssociatorType: 0
+  associationMatcherType: 1
+  checkClassMatch: 1
+  minMatchingScore4Overall: 0.1103
+  minMatchingScore4SizeSimilarity: 0.0392
+  minMatchingScore4Iou: 0.0980
+  minMatchingScore4VisualSimilarity: 0.3234
+  matchingScoreWeight4VisualSimilarity: 0.4223
+  matchingScoreWeight4SizeSimilarity: 0.8416
+  matchingScoreWeight4Iou: 0.6517
+  tentativeDetectorConfidence: 0.0198
+  minMatchingScore4TentativeIou: 0.1844
+StateEstimator:
+  stateEstimatorType: 1
+  processNoiseVar4Loc: 374.6508
+  processNoiseVar4Size: 3364.1350
+  processNoiseVar4Vel: 3.6082
+  measurementNoiseVar4Detector: 164.4517
+  measurementNoiseVar4Tracker: 3439.5683
+VisualTracker:
+  visualTrackerType: 1
+  useColorNames: 1
+  useHog: 1
+  featureImgSizeLevel: 4
+  featureFocusOffsetFactor_y: 0.0652
+  filterLr: 0.0993
+  filterChannelWeightsLr: 0.0549
+  gaussianSigma: 0.9047
+ReID: # need customization
+  reidType: 2
+  batchSize: 100
+  workspaceSize: 1000
+  reidFeatureSize: 128
+  reidHistorySize: 148
+  inferDims: [128, 64, 3]
+  networkMode: 0
+  inputOrder: 1
+  colorFormat: 0
+  offsets: [0.0, 0.0, 0.0]
+  netScaleFactor: 1.0000
+  keepAspc: 1
+  # onnxFile: customize_onnx_path
