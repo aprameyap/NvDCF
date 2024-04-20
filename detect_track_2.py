@@ -98,3 +98,7 @@ cap.release()
 cv2.destroyAllWindows()
 # Uncomment the next line if you're using UART
 # ser.close()
+
+
+"""Avg FPS for 640x480 ~ 15"""
+"""Avg FPS for 1280x720 ~ 7"""
